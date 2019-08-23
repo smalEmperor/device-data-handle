@@ -1,0 +1,76 @@
+server:
+  port: 8080
+  tomcat.uri-encoding: utf-8
+  servlet.context-path: /
+
+spring:
+  datasource:
+    handle:
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://192.168.1.134:3306/device_data_handle?useUnicode=true&characterEncoding=utf8
+      username: root
+      password: root
+    team:
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://192.168.1.134:3306/team_people??useUnicode=true&characterEncoding=utf8
+      username: root
+      password: root
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      #minimum-idle: 5
+      maximum-pool-size: 15
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 10000
+      connection-test-query: SELECT 1
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/mydb
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 127.0.0.1:9300
+      properties:
+        path:
+          logs: ./elasticsearch/logs
+          data: ./elasticsearch/data
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: false
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    cache: false
+  mvc:
+    favicon:
+      enabled: false
+    #static-path-pattern: /**
+  #resources:
+    #static-locations: classpath:/templates/,classpath:/static/
+  # redis
+  #   host: 192.168.1.197
+  #   port: 6739
+  #  password:
+  #  timeout: 10000ms
+  #  database: 0
+  #  lettuce:
+  #   pool:
+  #     max-active: 8
+  #    max-wait: -1
+  #    max-idle: 8
+  #     min-idle: 0
+
+
+#mybatis-plus
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.easicare.device.entity
+
+logging:
+  config: classpath:logback-spring.xml
+
+

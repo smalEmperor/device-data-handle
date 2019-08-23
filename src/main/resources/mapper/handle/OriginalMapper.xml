@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.easicare.device.mapper.handle.OriginalMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.easicare.device.entity.Original">
+        <id column="id" property="id" />
+        <result column="head" property="head" />
+        <result column="seq" property="seq" />
+        <result column="data_index" property="dataIndex" />
+        <result column="device_id" property="deviceId" />
+        <result column="device_type" property="deviceStyle" />
+        <result column="device_style" property="deviceStyle" />
+        <result column="pwr" property="pwr" />
+        <result column="seq" property="seq" />
+        <result column="cmd" property="cmd" />
+        <result column="control_value" property="controlValue" />
+        <result column="data_type" property="dataType" />
+        <result column="data_length" property="dataLength" />
+        <result column="payload" property="payload" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="active" property="active" />
+    </resultMap>
+
+</mapper>
